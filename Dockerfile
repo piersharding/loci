@@ -8,7 +8,7 @@ ARG PROJECT_REPO=https://git.openstack.org/openstack/${PROJECT}
 ARG PROJECT_REF=master
 ARG DISTRO
 ARG PROFILES
-ARG PIP_PACKAGES=""
+ARG PIP_PACKAGES="enum-compat"
 ARG PIP_ARGS=""
 ARG DIST_PACKAGES="python-enum"
 ARG PLUGIN=no
@@ -25,4 +25,5 @@ ARG SPICE_REF=spice-html5-0.1.6
 COPY scripts /opt/loci/scripts
 COPY bindep.txt pydep.txt /opt/loci/
 
+RUN env
 RUN /opt/loci/scripts/install.sh
